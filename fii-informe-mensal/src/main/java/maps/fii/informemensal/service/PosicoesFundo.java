@@ -1,10 +1,17 @@
 package maps.fii.informemensal.service;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
-public class PosicoesFundo {
+public class PosicoesFundo implements Iterable<PosicaoFundo> {
 
+	public PosicoesFundo() {
+	}
+	public PosicoesFundo(List<PosicaoFundo> posicoes) {
+		super();
+		this.posicoes = posicoes;
+	}
 	private List<PosicaoFundo> posicoes = new ArrayList<PosicaoFundo>();
 	
 	public void add(PosicaoFundo posicaoFundo) {
@@ -15,17 +22,15 @@ public class PosicoesFundo {
 		return posicoes;
 	}
 
+	@Override
+	public String toString() {
+		return "PosicoesFundo [posicoes=" + posicoes + "]";
+	}
 	public void setPosicoes(List<PosicaoFundo> posicoes) {
 		this.posicoes = posicoes;
 	}
-
-	public PosicoesFundo() {
+	@Override
+	public Iterator<PosicaoFundo> iterator() {
+		return posicoes.iterator();
 	}
-	
-	public PosicoesFundo(List<PosicaoFundo> posicoes) {
-		super();
-		this.posicoes = posicoes;
-	}
-	
-	
 }

@@ -1,25 +1,24 @@
-package maps.fii.informemensal.web;
+package maps.fii.informemensal.domain;
 
 public class InformeMensalFII {
-	private String competencia;
 
-	public String getCompetencia() {
-		return competencia;
-	}
-
-	private String cnpj;
 	private String nome;
+	private String cnpj;
+	private String competencia;
 	private double valorCota;
 
 	private InformacoesAtivo ativo;
 	private InformacoesPassivo passivo;
 
-	public InformeMensalFII(String competencia, String cnpj, String nome, double valorCota) {
+	public InformeMensalFII(String nome, String cnpj, String competencia) {
 		super();
 		this.competencia = competencia;
 		this.cnpj = cnpj;
 		this.nome = nome;
-		this.valorCota = valorCota;
+	}
+
+	public String getCompetencia() {
+		return competencia;
 	}
 
 	public String getCnpj() {
@@ -42,4 +41,7 @@ public class InformeMensalFII {
 		return passivo;
 	}
 
+	public void setInformacoesAtivo(InformacoesAtivo ativo) {
+		this.ativo = ativo;
+	}
 }

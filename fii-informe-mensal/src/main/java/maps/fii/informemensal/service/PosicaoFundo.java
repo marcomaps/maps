@@ -4,19 +4,19 @@ public class PosicaoFundo {
 
 	private String segmento;
 	private String classificacao;
-	public String getClassificacao() {
-		return classificacao;
-	}
-
 	private String papel;
 	private double valor;
 
+	public PosicaoFundo() {
+	}
 	public PosicaoFundo(String segmento, String classificacao, String papel, double valor) {
-		super();
 		this.segmento = segmento;
 		this.classificacao = classificacao;
 		this.papel = papel;
 		this.valor = valor;
+	}
+	public String getClassificacao() {
+		return classificacao;
 	}
 
 	public String getSegmento() {

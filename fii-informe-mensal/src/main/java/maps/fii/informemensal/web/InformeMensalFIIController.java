@@ -5,9 +5,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import maps.fii.informemensal.domain.InformacoesAtivo;
+import maps.fii.informemensal.domain.InformacoesAtivoBuilder;
+import maps.fii.informemensal.domain.InformeMensalFII;
+import maps.fii.informemensal.service.CadastroFundo;
 import maps.fii.informemensal.service.CadastroFundoService;
 import maps.fii.informemensal.service.PatrimonioFundoService;
 import maps.fii.informemensal.service.PosicaoFundoService;
+import maps.fii.informemensal.service.PosicoesFundo;
 
 @RestController
 public class InformeMensalFIIController {
@@ -26,10 +31,13 @@ public class InformeMensalFIIController {
 
 	@RequestMapping("/fii/informes/mensal")
 	public InformeMensalFII gerar(@RequestParam String cnpj, @RequestParam String competencia) {
-		throw new UnsupportedOperationException();
-//		CadastroFundo cadastroFundo = this.cadFundoService.cadastro(cnpj);
-//		PosicoesFundo posicoes = this.posicaoFundoService.posicao(cnpj);
-//		System.out.println(posicoes);
-//		return new InformeMensalFII(competencia, cadastroFundo.getCnpj(), cadastroFundo.getNome(), cadastroFundo.getValorCota());
+		CadastroFundo cadastro = this.cadFundoService.cadastro(cnpj);
+		
+		PosicoesFundo posicoes = this.posicaoFundoService.posicao(cnpj);
+		InformacoesAtivo ativo = new InformacoesAtivoBuilder(posicoes).build();
+		
+		InformeMensalFII informeMensalFII = new InformeMensalFII(cadastro.getNome(), cnpj, competencia);
+		informeMensalFII.setInformacoesAtivo(ativo);
+		return informeMensalFII;
 	}
 }
