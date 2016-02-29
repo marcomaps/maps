@@ -15,7 +15,6 @@ public class InformacoesAtivoBuilder {
 
 	public InformacoesAtivo build() {
 		for (PosicaoFundo pos : this.posicoes) {
-			System.out.println(pos);
 			switch (pos.getSegmento()) {
 			case "Renda Fixa":
 				rendaFixa(pos);
