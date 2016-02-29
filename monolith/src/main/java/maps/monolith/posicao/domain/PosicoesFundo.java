@@ -1,4 +1,4 @@
-package maps.monolith.web;
+package maps.monolith.posicao.domain;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -11,5 +11,4 @@ public class CadastroFundoService {
 		// TODO ver como passar parâmetro de maneira mais elegante
 		return restTemplate.getForObject("http://localhost:8080/fundo/cadastro?cnpj=" + cnpj, CadastroFundo.class);
 	}
-
 }

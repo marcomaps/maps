@@ -1,4 +1,4 @@
-package maps.monolith.web;
+package maps.monolith.cadastro.web;
 
 import java.util.Collection;
 
@@ -9,13 +9,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class FundoController {
+import maps.monolith.cadastro.domain.CadastroFundo;
+import maps.monolith.cadastro.domain.CadastroFundoRepository;
 
-	private FundoRepository fundoRepository;
+@RestController
+public class CadastroFundoController {
+
+	private CadastroFundoRepository fundoRepository;
 
 	@Autowired
-	public FundoController(FundoRepository fundoRepository) {
+	public CadastroFundoController(CadastroFundoRepository fundoRepository) {
 		this.fundoRepository = fundoRepository;
 	}
 

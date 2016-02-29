@@ -1,12 +1,13 @@
-package maps.fii.informemensal.service;
+package maps.monolith.cadastro.domain;
 
 public class CadastroFundo {
 
 	private String cnpj;
 	private String nome;
+	
 	private DadosAdministrador administrador;
 
-	
+
 	public CadastroFundo() {
 	}
 
@@ -15,14 +16,6 @@ public class CadastroFundo {
 		this.nome = nome;
 		this.administrador = adm;
 	}
-	public void setCnpj(String cnpj) {
-		this.cnpj = cnpj;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
 
 	public String getCnpj() {
 		return cnpj;
@@ -31,6 +24,14 @@ public class CadastroFundo {
 	public String getNome() {
 		return nome;
 	}
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
+	}
+	
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
 	public DadosAdministrador getAdministrador() {
 		return administrador;
 	}

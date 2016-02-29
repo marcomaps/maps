@@ -1,4 +1,4 @@
-package maps.monolith.web;
+package maps.monolith.posicao.domain;
 
 public class PosicaoFundo {
 
