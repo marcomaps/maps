@@ -1,6 +1,10 @@
 package maps.monolith.posicao.web;
 
+import java.util.Date;
+
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,11 +12,11 @@ import maps.monolith.posicao.domain.PosicaoFundo;
 import maps.monolith.posicao.domain.PosicoesFundo;
 
 @RestController
+@RequestMapping("/fundos/{cnpj}/posicao")
 public class PosicaoController {
 
-	// TODO pedir data no parâmetro
-	@RequestMapping("/fundo/posicao")
-	public PosicoesFundo posicao(@RequestParam String cnpj) {
+	@RequestMapping(method = RequestMethod.GET)
+	public PosicoesFundo posicao(@PathVariable String cnpj, @RequestParam Date data) {
 		PosicoesFundo posicoes = new PosicoesFundo();
 		posicoes.add(new PosicaoFundo("Renda Fixa", "Título Público", "LFT-2020", 2));
 		posicoes.add(new PosicaoFundo("Renda Fixa", "Título Público", "LTN-2020", 3));

@@ -1,6 +1,5 @@
 package maps.monolith.patrimonio.web;
 
-import java.text.DateFormat;
 import java.util.Date;
 
 import org.springframework.web.bind.annotation.PathVariable;
