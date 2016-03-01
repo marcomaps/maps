@@ -3,16 +3,19 @@ package maps.monolith.cadastro.web;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import maps.monolith.cadastro.domain.CadastroFundo;
 import maps.monolith.cadastro.domain.CadastroFundoRepository;
 
 @RestController
+@RequestMapping(value = "/fundos")
 public class CadastroFundoController {
 
 	private CadastroFundoRepository fundoRepository;
@@ -22,23 +25,36 @@ public class CadastroFundoController {
 		this.fundoRepository = fundoRepository;
 	}
 
-	@RequestMapping("/fundo/cadastro")
-	public CadastroFundo find(@RequestParam String cnpj) {
-		return fundoRepository.find(cnpj);
+	@RequestMapping(value = "/{cnpj}", method = RequestMethod.GET)
+	public CadastroFundo find(@PathVariable String cnpj) {
+		// String cnpj = "1";
+		CadastroFundo cadFundo = fundoRepository.find(cnpj);
+		if (cadFundo == null) {
+			throw new FundoNaoEncontradoException(cnpj);
+		}
+		return cadFundo;
 	}
 
-	@RequestMapping("/fundo/cadastro/todos")
+	@RequestMapping(method = RequestMethod.GET)
 	public Collection<CadastroFundo> findAll() {
 		return fundoRepository.findAll();
 	}
 
-	// curl --data '{"cnpj" : "6", "nome" : "FUNDO 6", "valorCota" : "6.66"}'
+	// curl --data '{"cnpj" : "6", "nome" : "FUNDO 6"}'
 	// -X POST -H 'Content-Type:application/json'
-	// http://localhost:8080/fundo/cadastro/novo
-	@RequestMapping(method = RequestMethod.POST, path = "/fundo/cadastro/novo")
+	// http://localhost:8080/fundos/
+	@RequestMapping(method = RequestMethod.POST)
 	public CadastroFundo create(@RequestBody CadastroFundo cad) {
-		System.out.println("criando " + cad);
 		fundoRepository.add(cad);
 		return cad;
+	}
+
+	@SuppressWarnings("serial")
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	class FundoNaoEncontradoException extends RuntimeException {
+
+		public FundoNaoEncontradoException(String cnpj) {
+			super("Fundo não encontrado. CNPJ: " + cnpj);
+		}
 	}
 }
