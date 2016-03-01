@@ -27,7 +27,6 @@ public class CadastroFundoController {
 
 	@RequestMapping(value = "/{cnpj}", method = RequestMethod.GET)
 	public CadastroFundo find(@PathVariable String cnpj) {
-		// String cnpj = "1";
 		CadastroFundo cadFundo = fundoRepository.find(cnpj);
 		if (cadFundo == null) {
 			throw new FundoNaoEncontradoException(cnpj);
@@ -40,9 +39,7 @@ public class CadastroFundoController {
 		return fundoRepository.findAll();
 	}
 
-	// curl --data '{"cnpj" : "6", "nome" : "FUNDO 6"}'
-	// -X POST -H 'Content-Type:application/json'
-	// http://localhost:8080/fundos/
+	// curl --data '{"cnpj":"8","nome":"FUNDO 8","administrador":{"cnpj":"456","nome":"ADM 2"}}' -X POST -H 'Content-Type:application/json' http://localhost:8080/fundos/
 	@RequestMapping(method = RequestMethod.POST)
 	public CadastroFundo create(@RequestBody CadastroFundo cad) {
 		fundoRepository.add(cad);
@@ -54,7 +51,7 @@ public class CadastroFundoController {
 	class FundoNaoEncontradoException extends RuntimeException {
 
 		public FundoNaoEncontradoException(String cnpj) {
-			super("Fundo não encontrado. CNPJ: " + cnpj);
+			super("Fundo nï¿½o encontrado. CNPJ: " + cnpj);
 		}
 	}
 }
