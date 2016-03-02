@@ -1,7 +1,9 @@
 package maps.fii.informemensal.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +18,7 @@ import maps.fii.informemensal.service.PosicaoFundoService;
 import maps.fii.informemensal.service.PosicoesFundo;
 
 @RestController
+@RequestMapping("/fii/informes/mensal/{cnpj}")
 public class InformeMensalFIIController {
 
 	private CadastroFundoService cadFundoService;
@@ -30,8 +33,8 @@ public class InformeMensalFIIController {
 		this.posicaoFundoService = posicaoFundoService;
 	}
 
-	@RequestMapping("/fii/informes/mensal")
-	public InformeMensalFII gerar(@RequestParam String cnpj, @RequestParam String competencia) {
+	@RequestMapping(method = RequestMethod.GET)
+	public InformeMensalFII gerar(@PathVariable String cnpj, @RequestParam String competencia) {
 		CadastroFundo cadastro = this.cadFundoService.cadastro(cnpj);
 		DadosPatrimonio patrimonio = this.patrimonioFundoService.patrimonio(cnpj);
 

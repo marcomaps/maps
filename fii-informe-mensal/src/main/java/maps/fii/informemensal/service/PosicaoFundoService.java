@@ -1,4 +1,5 @@
 package maps.fii.informemensal.service;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -6,7 +7,6 @@ import org.springframework.web.client.RestTemplate;
 public class PosicaoFundoService {
 	public PosicoesFundo posicao(String cnpj) {
 		RestTemplate restTemplate = new RestTemplate();
-		// TODO ver como passar parâmetro de maneira mais elegante
-		return restTemplate.getForObject("http://localhost:8080/fundo/posicao?cnpj=" + cnpj, PosicoesFundo.class);
+		return restTemplate.getForObject(BaseURL.url + cnpj + "/posicao?data=01/01/2016", PosicoesFundo.class);
 	}
 }
