@@ -20,6 +20,7 @@ public class PosicaoController {
 		PosicoesFundo posicoes = new PosicoesFundo();
 		posicoes.add(new PosicaoFundo("Renda Fixa", "Título Público", "LFT-2020", 2));
 		posicoes.add(new PosicaoFundo("Renda Fixa", "Título Público", "LTN-2020", 3));
+		posicoes.add(new PosicaoFundo("Renda Fixa", "Título Privado", "CDB2456445", 456));
 		posicoes.add(new PosicaoFundo("Cota", "RF", "FUNDO SOBERANO", 4));
 		posicoes.add(new PosicaoFundo("Cota", "Ações", "FUNDO IBOVESPA ATIVO", 5));
 		posicoes.add(new PosicaoFundo("Cota", "Imobiliário", "FUNDO SHOPPING MORUMBI", 6));

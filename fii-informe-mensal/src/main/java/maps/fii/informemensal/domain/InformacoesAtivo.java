@@ -25,6 +25,11 @@ public class InformacoesAtivo {
 		track("Título Público", pos);
 	}
 
+	public void tituloPrivado(PosicaoFundo pos) {
+		this.tituloPrivado += pos.getValor();
+		track("Título Privado", pos);
+	}
+	
 	public void fundoRF(PosicaoFundo pos) {
 		this.fundoRF += pos.getValor();
 		track("fundoRF", pos);

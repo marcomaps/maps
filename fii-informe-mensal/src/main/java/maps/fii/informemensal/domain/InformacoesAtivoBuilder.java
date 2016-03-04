@@ -55,7 +55,9 @@ public class InformacoesAtivoBuilder {
 		case "Título Público" :
 			this.informacoesAtivo.tituloPublico(pos);
 			break;
-		case "Debênture" :
+		case "Título Privado" :
+			this.informacoesAtivo.tituloPrivado(pos);
+			break;
 		}
 	}
 }
