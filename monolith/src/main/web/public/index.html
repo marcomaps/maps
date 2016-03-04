@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="hello.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="Hello">
+			<b>INFORME MENSAL</b>
+			<p>Nome do Fundo: {{retorno.nome}}  CNPJ: {{retorno.cnpj}}</p>
+			<p>Nome do Administrador {{retorno.nomeAdm}}	CNPJ: {{retorno.cnpjAdm}}</p>
+			<p>Competência {{retorno.competencia}}</p>
+			<p>Número de cotistas {{retorno.numeroCotistas}}</p>
+			
+			<br/>
+			
+			<p>1 Ativo</p>
+			<p>2 Patrimônio Líquido</p>
+			<p>3 Número de Cotas Emitidas</p>
+			<p>4 Valor Patrimonial das Cotas {{retorno.valorCota}}</p>
+			<p>5 Rentabilidade do Período</p>
+						
+			<br/><br/>
+			
+			<b>Informações do Ativo</b>
+			<p>6 Total mantido para as Necessidades de Liquidez (art. 46, § único, ICVM 472/08)</p>
+			<p>6.1 Disponibilidades {{retorno.ativo.caixa}}</p>
+			<p>6.2 Títulos Públicos {{retorno.ativo.tituloPublico}}</p>
+			<p>6.3 Títulos Privados {{retorno.ativo.tituloPrivado}}</p>
+			<p>6.4 Fundos de Renda Fixa {{retorno.ativo.fundoRF}}</p>
+			<p>7 Total investido </p>
+			<p>7.1 Direitos reais sobre bens imóveis</p>
+			<p>7.2 Ações</p>
+			<p>7.3 Debêntures</p>
+			<p>7.4 Bônus de Subscrição, seus cupons, direitos, recibos de subscrição e certificados de desdobramentos</p>
+			<p>7.5 Certificados de Depósitos de Valores Mobiliários</p>
+			<p>7.6 Cédulas de Debêntures</p>
+			<p>7.7 Fundo de Ações (FIA) {{retorno.ativo.fundoAcoes}}</p></p>
+			<p>7.8 Fundo de Investimento em Participações (FIP)</p>
+		</div>
+	</body>
+</html>
