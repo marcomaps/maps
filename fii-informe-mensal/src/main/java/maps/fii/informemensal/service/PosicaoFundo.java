@@ -9,12 +9,14 @@ public class PosicaoFundo {
 
 	public PosicaoFundo() {
 	}
+
 	public PosicaoFundo(String segmento, String classificacao, String papel, double valor) {
 		this.segmento = segmento;
 		this.classificacao = classificacao;
 		this.papel = papel;
 		this.valor = valor;
 	}
+
 	public String getClassificacao() {
 		return classificacao;
 	}

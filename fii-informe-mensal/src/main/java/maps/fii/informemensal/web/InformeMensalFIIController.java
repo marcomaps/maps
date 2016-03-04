@@ -35,12 +35,6 @@ public class InformeMensalFIIController {
 		this.posicaoFundoService = posicaoFundoService;
 	}
 
-	
-//	@RequestMapping(method = RequestMethod.GET)
-//	public InformeMensalFII gerar(@PathVariable String cnpj) {
-//		return this.gerar(cnpj, "01/2016");
-//	}
-	
 	@RequestMapping(method = RequestMethod.GET)
 	public InformeMensalFII gerar(@PathVariable String cnpj, @RequestParam String competencia) {
 		CadastroFundo cadastro = this.cadFundoService.cadastro(cnpj);
@@ -52,7 +46,8 @@ public class InformeMensalFIIController {
 		InformeMensalFII informeMensalFII = new InformeMensalFII(cadastro.getNome(), cnpj,
 				cadastro.getAdministrador().getNome(), cadastro.getAdministrador().getCnpj(), competencia,
 				patrimonio.getNumeroCotistas());
-		informeMensalFII.setValorCota(patrimonio.getValorCota());
+		informeMensalFII.setInformacoesGerais(patrimonio.getAtivos(), patrimonio.getPatrimonioLiquido(),
+				patrimonio.getQtdCotas(), patrimonio.getValorCota(), 1.4d);
 		informeMensalFII.setInformacoesAtivo(ativo);
 		return informeMensalFII;
 	}

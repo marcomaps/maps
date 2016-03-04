@@ -6,7 +6,7 @@ import java.util.List;
 public class PosicoesFundo {
 
 	private List<PosicaoFundo> posicoes = new ArrayList<PosicaoFundo>();
-	
+
 	public void add(PosicaoFundo posicaoFundo) {
 		posicoes.add(posicaoFundo);
 	}
@@ -21,11 +21,10 @@ public class PosicoesFundo {
 
 	public PosicoesFundo() {
 	}
-	
+
 	public PosicoesFundo(List<PosicaoFundo> posicoes) {
 		super();
 		this.posicoes = posicoes;
 	}
-	
-	
+
 }

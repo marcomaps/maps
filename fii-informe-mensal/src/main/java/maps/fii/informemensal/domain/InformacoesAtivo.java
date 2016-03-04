@@ -10,16 +10,16 @@ public class InformacoesAtivo {
 	private double fundoAcoes;
 	private double fundoImobiliario;
 	private double outros;
-	
+
 	private StringBuilder historico = new StringBuilder();
 
 	public InformacoesAtivo() {
 	}
 
 	private void track(String categoria, PosicaoFundo pos) {
-		historico.append(categoria).append(": ").append(pos).append("; ");
+		// historico.append(categoria).append(": ").append(pos).append("; ");
 	}
-	
+
 	public void tituloPublico(PosicaoFundo pos) {
 		this.tituloPublico += pos.getValor();
 		track("Título Público", pos);
@@ -29,7 +29,7 @@ public class InformacoesAtivo {
 		this.tituloPrivado += pos.getValor();
 		track("Título Privado", pos);
 	}
-	
+
 	public void fundoRF(PosicaoFundo pos) {
 		this.fundoRF += pos.getValor();
 		track("fundoRF", pos);

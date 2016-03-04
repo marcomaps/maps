@@ -4,8 +4,9 @@ public class DadosAdministrador {
 	private String cnpj;
 	private String nome;
 
-	public DadosAdministrador() {}
-	
+	public DadosAdministrador() {
+	}
+
 	public DadosAdministrador(String cnpj, String nome) {
 		super();
 		this.cnpj = cnpj;

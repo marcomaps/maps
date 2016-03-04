@@ -4,9 +4,8 @@ public class CadastroFundo {
 
 	private String cnpj;
 	private String nome;
-	
-	private DadosAdministrador administrador;
 
+	private DadosAdministrador administrador;
 
 	public CadastroFundo() {
 	}
@@ -24,10 +23,11 @@ public class CadastroFundo {
 	public String getNome() {
 		return nome;
 	}
+
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
-	
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}

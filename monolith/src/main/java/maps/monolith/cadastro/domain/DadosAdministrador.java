@@ -6,7 +6,7 @@ public class DadosAdministrador {
 
 	public DadosAdministrador() {
 	}
-	
+
 	public DadosAdministrador(String cnpj, String nome) {
 		super();
 		this.cnpj = cnpj;

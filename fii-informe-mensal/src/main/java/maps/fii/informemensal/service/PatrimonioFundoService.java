@@ -7,7 +7,6 @@ import org.springframework.web.client.RestTemplate;
 public class PatrimonioFundoService {
 	public DadosPatrimonio patrimonio(String cnpj) {
 		RestTemplate restTemplate = new RestTemplate();
-		return restTemplate.getForObject(BaseURL.url + cnpj + "/patrimonio?data=01/01/2016",
-				DadosPatrimonio.class);
+		return restTemplate.getForObject(BaseURL.url + cnpj + "/patrimonio?data=01/01/2016", DadosPatrimonio.class);
 	}
 }

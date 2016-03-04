@@ -22,29 +22,29 @@ public class InformacoesAtivoBuilder {
 			case "Cota":
 				cota(pos);
 				break;
-				
+
 			default:
 				outros(pos);
 				break;
 			}
 		}
-		
+
 		return informacoesAtivo;
 	}
 
 	private void outros(PosicaoFundo pos) {
-		
+
 	}
 
 	private void cota(PosicaoFundo pos) {
 		switch (pos.getClassificacao()) {
-		case "RF" :
+		case "RF":
 			this.informacoesAtivo.fundoRF(pos);
 			break;
-		case "Ações" :
+		case "Ações":
 			this.informacoesAtivo.fundoAcoes(pos);
 			break;
-		case "Imobiliário" :
+		case "Imobiliário":
 			this.informacoesAtivo.fundoImobiliario(pos);
 			break;
 		}
@@ -52,10 +52,10 @@ public class InformacoesAtivoBuilder {
 
 	private void rendaFixa(PosicaoFundo pos) {
 		switch (pos.getClassificacao()) {
-		case "Título Público" :
+		case "Título Público":
 			this.informacoesAtivo.tituloPublico(pos);
 			break;
-		case "Título Privado" :
+		case "Título Privado":
 			this.informacoesAtivo.tituloPrivado(pos);
 			break;
 		}

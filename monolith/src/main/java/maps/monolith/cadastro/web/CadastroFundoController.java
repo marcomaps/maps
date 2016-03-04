@@ -39,7 +39,9 @@ public class CadastroFundoController {
 		return fundoRepository.findAll();
 	}
 
-	// curl --data '{"cnpj":"8","nome":"FUNDO 8","administrador":{"cnpj":"456","nome":"ADM 2"}}' -X POST -H 'Content-Type:application/json' http://localhost:8080/fundos/
+	// curl --data '{"cnpj":"8","nome":"FUNDO
+	// 8","administrador":{"cnpj":"456","nome":"ADM 2"}}' -X POST -H
+	// 'Content-Type:application/json' http://localhost:8080/fundos/
 	@RequestMapping(method = RequestMethod.POST)
 	public CadastroFundo create(@RequestBody CadastroFundo cad) {
 		fundoRepository.add(cad);

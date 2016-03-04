@@ -106,5 +106,4 @@ public class DadosPatrimonio {
 		this.taxaPerformance = taxaPerformance;
 	}
 
-	
 }

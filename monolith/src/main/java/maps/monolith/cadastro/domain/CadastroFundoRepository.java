@@ -14,7 +14,7 @@ public class CadastroFundoRepository {
 	public CadastroFundoRepository() {
 		final DadosAdministrador adm1 = new DadosAdministrador("123", "ADM 1");
 		final DadosAdministrador adm2 = new DadosAdministrador("456", "ADM 2");
-		
+
 		add(new CadastroFundo("1", "FUNDO 1", adm1));
 		add(new CadastroFundo("2", "FUNDO 2", adm1));
 		add(new CadastroFundo("3", "FUNDO 3", adm2));

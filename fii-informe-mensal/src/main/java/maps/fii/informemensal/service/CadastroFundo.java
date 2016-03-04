@@ -6,7 +6,6 @@ public class CadastroFundo {
 	private String nome;
 	private DadosAdministrador administrador;
 
-	
 	public CadastroFundo() {
 	}
 
@@ -15,6 +14,7 @@ public class CadastroFundo {
 		this.nome = nome;
 		this.administrador = adm;
 	}
+
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
@@ -23,7 +23,6 @@ public class CadastroFundo {
 		this.nome = nome;
 	}
 
-
 	public String getCnpj() {
 		return cnpj;
 	}
@@ -31,6 +30,7 @@ public class CadastroFundo {
 	public String getNome() {
 		return nome;
 	}
+
 	public DadosAdministrador getAdministrador() {
 		return administrador;
 	}

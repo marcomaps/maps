@@ -17,7 +17,7 @@ public class PatrimonioController {
 	@RequestMapping(method = RequestMethod.GET)
 	public DadosPatrimonio posicao(@PathVariable String cnpj, @RequestParam Date data) {
 		DadosPatrimonio dados = new DadosPatrimonio();
-		
+
 		dados.setData(data);
 		dados.setPatrimonioLiquido(Math.random());
 		dados.setValorCota(Math.random());
@@ -33,6 +33,5 @@ public class PatrimonioController {
 		dados.setTaxaPerformance(Math.random());
 
 		return dados;
-	} 
+	}
 }
-

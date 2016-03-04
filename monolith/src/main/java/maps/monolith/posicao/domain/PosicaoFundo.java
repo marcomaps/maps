@@ -4,6 +4,7 @@ public class PosicaoFundo {
 
 	private String segmento;
 	private String classificacao;
+
 	public String getClassificacao() {
 		return classificacao;
 	}
