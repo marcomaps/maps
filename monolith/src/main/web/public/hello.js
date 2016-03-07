@@ -1,6 +1,8 @@
 function Hello($scope, $http, $location) {
 
-cnpjFundo = $location.search().fundo;
+cnpjFundo = $location.search().cnpjFundo;
+if (cnpjFundo == null) alert("Informar cnpj fundo. Ex: http://http://localhost:8080/#/?cnpjFundo=4");
+
 
 $http({
   method: 'GET',
@@ -11,6 +13,5 @@ $http({
   }, function errorCallback(response) {
 	alert('response.status: ' + response.status);
 	alert('response.statusText: ' + response.statusText);
-	
   });
 }

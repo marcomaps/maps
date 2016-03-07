@@ -53,7 +53,7 @@ public class CadastroFundoController {
 	class FundoNaoEncontradoException extends RuntimeException {
 
 		public FundoNaoEncontradoException(String cnpj) {
-			super("Fundo n�o encontrado. CNPJ: " + cnpj);
+			super("Fundo não encontrado. CNPJ: " + cnpj);
 		}
 	}
 }
