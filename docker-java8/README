@@ -1,0 +1,2 @@
+docker build -t="java8" .
+docker run -v ~/dev/maps/monolith/target/monolith-0.1.0.jar:/home/app.jar -i -t java8 java -jar /home/app.jar
