@@ -1,6 +1,10 @@
 # construir imagem, precisa da jdk no diretorio
 docker build -t="java8" .
 # roda o container
-docker run -v ~/dev/maps/monolith/target/monolith-0.1.0.jar:/home/app.jar -i -t java8 java -jar /home/app.jar
+# -d roda como daemon
+# --name nome do container
+# -v volume. 
+# -P expõe portas
+docker run -P -d -v ~/dev/maps/monolith/target/monolith-0.1.0.jar:/home/app.jar -i -t java8
 # descobrir IP
 docker inspect af118e5fe64c | grep ip
