@@ -4,6 +4,4 @@ ENV JAVA_HOME /opt/java/jdk1.8.0_74
 ENV PATH $PATH:$JAVA_HOME/bin
 EXPOSE 8080
 CMD java -jar /home/app.jar
-#VOLUME /home/app.jar
-#RUN java -version
 
