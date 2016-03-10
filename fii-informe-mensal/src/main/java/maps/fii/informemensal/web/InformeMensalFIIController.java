@@ -13,7 +13,6 @@ import maps.fii.informemensal.domain.InformacoesAtivoBuilder;
 import maps.fii.informemensal.domain.InformeMensalFII;
 import maps.fii.informemensal.service.CadastroFundo;
 import maps.fii.informemensal.service.CadastroFundoService;
-import maps.fii.informemensal.service.ChamadaServicoException;
 import maps.fii.informemensal.service.DadosPatrimonio;
 import maps.fii.informemensal.service.PatrimonioFundoService;
 import maps.fii.informemensal.service.PosicaoFundoService;
