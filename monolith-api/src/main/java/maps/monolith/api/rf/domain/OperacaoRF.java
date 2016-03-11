@@ -3,6 +3,7 @@ package maps.monolith.api.rf.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -20,6 +21,7 @@ public class OperacaoRF {
 	private double puNegociacao;
 
 	@ManyToOne
+	@JoinColumn(name = "COD_CART")
 	private Carteira carteira;
 
 	@Override
